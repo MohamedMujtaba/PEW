@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './style.css';
+import NavBar from './components/Nav/NavBar';
+import { motion  } from "framer-motion"
+import Home from './pages/Home/Home';
+import { Example } from './components/try/Try';
+import SideBar from './components/sideBar/SideBar';
+import { useState } from 'react';
 function App() {
+
+  const [isClicked, setIsCliced] = useState(false);
+  const handelCliced = () => {
+    setIsCliced(!isClicked);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar isClicked={isClicked} handelCliced={handelCliced} />
+      
+      <Home />
+      <Home />
+      <Home />
+      <Home />
+      <Home />
+      <Home />
+      {/* <Example/> */}
+      
+    </>
   );
 }
 
